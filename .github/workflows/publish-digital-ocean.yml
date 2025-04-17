@@ -1,0 +1,27 @@
+name: Deploy to DigitalOcean
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: soton-therapy-backend
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Deploy Deno App via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          script_stop: true
+          command_timeout: 200m
+          script: |
+            cd /root/soton-therapy-backend
+            git pull origin main
+            pkill -f "deno run" || true
+            nohup deno run --allow-net --allow-env --allow-read --allow-write src/server.ts > server.log 2>&1 &
