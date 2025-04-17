@@ -1,0 +1,1 @@
+web: deno run --allow-net --allow-scripts --allow-env src/server.ts

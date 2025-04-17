@@ -30,6 +30,8 @@ const FRONT_ORIGIN: string = Deno.env.get("FRONT_ORIGIN") || "*";
  */
 const app: Application = new Application();
 
+console.log("Environment variables:", Deno.env.toObject());
+
 // set up logging middleware for the application
 app.use(async (ctx, next) => {
   const start: number = Date.now();

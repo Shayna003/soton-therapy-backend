@@ -7,6 +7,7 @@
     "jsr:@std/assert@*": "1.0.11",
     "jsr:@std/assert@1": "1.0.11",
     "jsr:@std/assert@^1.0.10": "1.0.11",
+    "jsr:@std/assert@^1.0.12": "1.0.12",
     "jsr:@std/bytes@1": "1.0.5",
     "jsr:@std/crypto@1": "1.0.4",
     "jsr:@std/crypto@^1.0.3": "1.0.4",
@@ -17,6 +18,7 @@
     "jsr:@std/fs@*": "1.0.13",
     "jsr:@std/http@1": "1.0.13",
     "jsr:@std/internal@^1.0.5": "1.0.5",
+    "jsr:@std/internal@^1.0.6": "1.0.6",
     "jsr:@std/media-types@1": "1.1.0",
     "jsr:@std/path@*": "1.0.8",
     "jsr:@std/path@1": "1.0.8",
@@ -67,7 +69,13 @@
     "@std/assert@1.0.11": {
       "integrity": "2461ef3c368fe88bc60e186e7744a93112f16fd110022e113a0849e94d1c83c1",
       "dependencies": [
-        "jsr:@std/internal"
+        "jsr:@std/internal@^1.0.5"
+      ]
+    },
+    "@std/assert@1.0.12": {
+      "integrity": "08009f0926dda9cbd8bef3a35d3b6a4b964b0ab5c3e140a4e0351fbf34af5b9a",
+      "dependencies": [
+        "jsr:@std/internal@^1.0.6"
       ]
     },
     "@std/bytes@1.0.5": {
@@ -97,6 +105,9 @@
     "@std/internal@1.0.5": {
       "integrity": "54a546004f769c1ac9e025abd15a76b6671ddc9687e2313b67376125650dc7ba"
     },
+    "@std/internal@1.0.6": {
+      "integrity": "9533b128f230f73bd209408bb07a4b12f8d4255ab2a4d22a1fd6d87304aca9a4"
+    },
     "@std/media-types@1.1.0": {
       "integrity": "c9d093f0c05c3512932b330e3cc1fe1d627b301db33a4c2c2185c02471d6eaa4"
     },
@@ -117,8 +128,8 @@
     "@anthropic-ai/sdk@0.27.3": {
       "integrity": "sha512-IjLt0gd3L4jlOfilxVXTifn42FnVffMgDC04RJK1KDZpmkBWLv0XC92MVVmkxrFZNS/7l3xWgP/I3nqtX1sQHw==",
       "dependencies": [
-        "@types/node@18.19.76",
         "@types/node-fetch",
+        "@types/node@18.19.76",
         "abort-controller",
         "agentkeepalive",
         "form-data-encoder",
@@ -164,8 +175,8 @@
     "@browserbasehq/sdk@2.3.0": {
       "integrity": "sha512-H2nu46C6ydWgHY+7yqaP8qpfRJMJFVGxVIgsuHe1cx9HkfJHqzkuIqaK/k8mU4ZeavQgV5ZrJa0UX6MDGYiT4w==",
       "dependencies": [
-        "@types/node@18.19.76",
         "@types/node-fetch",
+        "@types/node@18.19.76",
         "abort-controller",
         "agentkeepalive",
         "form-data-encoder",
@@ -1183,8 +1194,8 @@
     "openai@4.85.4_ws@8.18.1_zod@3.24.2": {
       "integrity": "sha512-Nki51PBSu+Aryo7WKbdXvfm0X/iKkQS2fq3O0Uqb/O3b4exOZFid2te1BZ52bbO5UwxQZ5eeHJDCTqtrJLPw0w==",
       "dependencies": [
-        "@types/node@18.19.76",
         "@types/node-fetch",
+        "@types/node@18.19.76",
         "abort-controller",
         "agentkeepalive",
         "form-data-encoder",
@@ -1197,8 +1208,8 @@
     "openai@4.85.4_zod@3.24.2": {
       "integrity": "sha512-Nki51PBSu+Aryo7WKbdXvfm0X/iKkQS2fq3O0Uqb/O3b4exOZFid2te1BZ52bbO5UwxQZ5eeHJDCTqtrJLPw0w==",
       "dependencies": [
-        "@types/node@18.19.76",
         "@types/node-fetch",
+        "@types/node@18.19.76",
         "abort-controller",
         "agentkeepalive",
         "form-data-encoder",
@@ -1210,8 +1221,8 @@
     "openai@4.85.4_zod@3.24.2_ws@8.18.1": {
       "integrity": "sha512-Nki51PBSu+Aryo7WKbdXvfm0X/iKkQS2fq3O0Uqb/O3b4exOZFid2te1BZ52bbO5UwxQZ5eeHJDCTqtrJLPw0w==",
       "dependencies": [
-        "@types/node@18.19.76",
         "@types/node-fetch",
+        "@types/node@18.19.76",
         "abort-controller",
         "agentkeepalive",
         "form-data-encoder",
@@ -2165,7 +2176,7 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/assert@1",
+      "jsr:@std/assert@^1.0.12",
       "npm:faiss-node@~0.5.1"
     ]
   }

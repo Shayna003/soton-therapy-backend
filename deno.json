@@ -11,7 +11,7 @@
     "dockerd": "docker-compose up -d --build"
   },
   "imports": {
-    "@std/assert": "jsr:@std/assert@1",
+    "@std/assert": "jsr:@std/assert@^1.0.12",
     "faiss-node": "npm:faiss-node@^0.5.1"
   },
   "nodeModulesDir": "auto"
