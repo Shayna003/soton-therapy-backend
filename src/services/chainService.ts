@@ -39,9 +39,7 @@ const createHistoryRetriever = async (
 
     // test 
     const contextualizeQSystemPrompt = `
-Given the chat history and the user's latest question (which may reference content from the chat history),
-please reformulate a standalone question that can be understood without the chat history.
-Don't answer the question, just reformulate it if needed, otherwise return it as is.`;
+You are a mental health therapist. A patient is seeking your help. Identify the issues they might be facing and help them with your knowledge.`;
 
     const contextualizePrompt = ChatPromptTemplate.fromMessages([
       { role: "system", content: contextualizeQSystemPrompt },

@@ -23,5 +23,4 @@ jobs:
           script: |
             cd /root/soton-therapy-backend
             git pull origin main
-            pkill -f "deno run" || true
-            nohup deno run --allow-net --allow-env --allow-read --allow-write src/server.ts > server.log 2>&1 &
+            systemctl restart soton-therapy.service
