@@ -4,6 +4,7 @@
     "test-local": "deno test --env-file=.env --allow-all tests/",
     "docs-json": "deno --allow-all src/utils/swaggerOptions.ts",
     "json-yaml": "deno --allow-all src/utils/jsonToYaml.ts",
+    "load-models": "deno --env-file=.env --allow-all  src/scripts/loadAIModels.ts",
     "generate-docs": "deno task docs-json && deno task json-yaml",
     "test": "docker-compose --file compose.test.yml up --build --abort-on-container-exit | grep \"deno\"",
     "docker": "docker-compose up --build",

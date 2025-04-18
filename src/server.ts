@@ -82,14 +82,16 @@ router.use(
 
 const { io, handler } = setupSocket(app);
 
-// listen on the port defined in the env file or 3000 as a fallback
 if (import.meta.main) {
   Deno.serve({
     handler,
     port: PORT,
+    cert: await Deno.readTextFileSync(Deno.env.get("CERT_FILE")),
+    key: await Deno.readTextFileSync(Deno.env.get("KEY_FILE")),
     onListen: ({ port }) => {
       console.log(`Server running on http://localhost:${port}`);
     },
   });
 }
+
 export { app, router, io };
