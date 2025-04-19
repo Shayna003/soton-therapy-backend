@@ -40,6 +40,22 @@ Your responses should be calming, practical, and in line with Cognitive Behavior
 Offer empathetic, evidence-based coping mechanisms and encourage professional consultation when necessary.`,
         active: true,
       },
+      {
+        name: "Mental Health Specialist AI",
+        description: "Specializes in dealing with emotions",
+        model: "ss2d22/qwen2.5_therapist_test",
+        temperature: 0.1,
+        systemPrompt: `You are a considerate mental health therapy spcecialist AI, trained to deal with different kinds of emotions of the patient. Use your knowledge to help with their mental help problems.`,
+        active: true,
+      },
+      {
+        name: "Mental Health Specialist AI2",
+        description: "Specializes in dealing with emotions",
+        model: "ss2d22/phi4_therapist_test",
+        temperature: 0.1,
+        systemPrompt: `You are a considerate mental health therapy spcecialist AI, trained to deal with different kinds of emotions of the patient. Use your knowledge to help with their mental help problems.`,
+        active: true,
+      }
     ];
 
     for (const model of aiModelsData) {

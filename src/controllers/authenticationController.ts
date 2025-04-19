@@ -73,13 +73,18 @@ const signUp = async (ctx: Context): Promise<void> => {
       JWT_KEY
     );
 
-    await ctx.cookies.set("jwt", token, { httpOnly: true });
+    await ctx.cookies.set("jwt", token, { httpOnly: true, ignoreInsecure: true, secure: true, sameSite: "none"  }); //, secure: true, sameSite: "none"
 
     ctx.response.status = 201;
     ctx.response.body = {
       user: {
         id: insertId.toString(),
         email,
+        firstName,
+        lastName,
+        avatar: "",
+        theme: 0,
+        configuredProfile: false,
       },
     };
   } catch (error) {
@@ -135,7 +140,7 @@ const signIn = async (ctx: Context): Promise<void> => {
       JWT_KEY
     );
 
-    await ctx.cookies.set("jwt", token, { httpOnly: true });
+    await ctx.cookies.set("jwt", token, { httpOnly: true, ignoreInsecure: true, secure: true, sameSite: "none" }); //, secure: true, sameSite: "none"
 
     ctx.response.status = 200;
     ctx.response.body = {
