@@ -86,10 +86,11 @@ if (import.meta.main) {
   Deno.serve({
     handler,
     port: PORT,
+    secure: true,
     cert: await Deno.readTextFileSync(Deno.env.get("CERT_FILE")),
     key: await Deno.readTextFileSync(Deno.env.get("KEY_FILE")),
     onListen: ({ port }) => {
-      console.log(`Server running on http://localhost:${port}`);
+      console.log(`Server running on https://localhost:${port}`);
     },
   });
 }

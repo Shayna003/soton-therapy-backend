@@ -73,7 +73,7 @@ const signUp = async (ctx: Context): Promise<void> => {
       JWT_KEY
     );
 
-    await ctx.cookies.set("jwt", token, { httpOnly: true });
+    await ctx.cookies.set("jwt", token, { httpOnly: true, secure: true, sameSite: "none" });
 
     ctx.response.status = 201;
     ctx.response.body = {
@@ -135,7 +135,7 @@ const signIn = async (ctx: Context): Promise<void> => {
       JWT_KEY
     );
 
-    await ctx.cookies.set("jwt", token, { httpOnly: true });
+    await ctx.cookies.set("jwt", token, { httpOnly: true, secure: true, sameSite: "none" });
 
     ctx.response.status = 200;
     ctx.response.body = {
