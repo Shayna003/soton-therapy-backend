@@ -37,6 +37,9 @@ export interface SignUpBody {
    * @type {?password}
    */
   password?: password;
+  
+  firstName?: string;
+  lastName?: string;
 }
 
 /**

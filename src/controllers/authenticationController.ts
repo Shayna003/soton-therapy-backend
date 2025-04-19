@@ -34,7 +34,7 @@ const signUp = async (ctx: Context): Promise<void> => {
     }
 
     const data: SignUpBody = await ctx.request.body.json();
-    const { email, password } = data;
+    const { email, firstName, lastName, password } = data;
 
     if (!email || !password) {
       ctx.response.status = 400;
@@ -51,11 +51,17 @@ const signUp = async (ctx: Context): Promise<void> => {
       return;
     }
 
+    if (!firstName || !lastName) {
+      ctx.response.status = 400;
+      ctx.response.body = { error: "First name and last name required" };
+      return;
+    }
+
     const insertId: ObjectId = await deps.insertUser({
       email,
       password,
-      firstName: "",
-      lastName: "",
+      firstName,
+      lastName,
       avatar: "",
       theme: 0,
       configuredProfile: false,
